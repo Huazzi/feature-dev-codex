@@ -1,5 +1,7 @@
 # Feature Dev Codex
 
+[简体中文](README.zh-CN.md)
+
 A Codex-native plugin for medium and large feature development. It uses independent exploration, architecture, and review passes; persistent planning files; and explicit approval gates for important decisions.
 
 ## What It Provides
