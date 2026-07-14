@@ -1,0 +1,37 @@
+{
+  "name": "feature-dev-codex",
+  "version": "0.1.0",
+  "description": "Multi-agent, approval-gated feature development workflow for Codex.",
+  "author": {
+    "name": "Huazzi"
+  },
+  "homepage": "https://github.com/Huazzi/feature-dev-codex",
+  "repository": "https://github.com/Huazzi/feature-dev-codex",
+  "keywords": [
+    "feature-development",
+    "multi-agent",
+    "architecture",
+    "code-review",
+    "planning"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Feature Dev Codex",
+    "shortDescription": "Approval-gated, multi-agent feature development.",
+    "longDescription": "A Codex-native feature workflow with independent exploration, architecture, and review passes, persistent planning files, and mandatory approval gates for important decisions.",
+    "developerName": "Anthropic workflow adapted locally",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Planning",
+      "Code Review",
+      "Multi-agent"
+    ],
+    "defaultPrompt": [
+      "Use feature-dev-codex to plan this feature.",
+      "Explore and propose an architecture before coding.",
+      "Run a high-risk feature workflow with approval gates."
+    ]
+  }
+}
