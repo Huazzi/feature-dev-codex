@@ -1,0 +1,20 @@
+{
+  "name": "huazzi-plugins",
+  "interface": {
+    "displayName": "Huazzi Plugins"
+  },
+  "plugins": [
+    {
+      "name": "feature-dev-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/feature-dev-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
