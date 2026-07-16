@@ -37,14 +37,17 @@ For typo fixes or low-risk, single-file changes with clear behavior, a direct re
 
 ## Workflow
 
-For medium-complexity or high-risk work, the orchestrator creates child agents for three independent passes:
+For medium-complexity and high-risk work, `feature-dev-codex` follows a **seven-phase lifecycle**. The three independent child-agent passes are not the entire workflow; they are embedded in Phases 2, 4, and 6.
 
-1. **Exploration**: identify similar features, data flow, testing practices, project conventions, and risk boundaries.
-2. **Architecture**: compare implementation options and provide a recommendation, changed-file map, test plan, and risk analysis.
-3. **Review**: after implementation and initial verification, independently assess correctness, regressions, conventions, tests, and risks.
+1. **Discovery and Planning**: define the feature, success criteria, constraints, non-goals, and risk classification; create persistent planning files.
+2. **Codebase Exploration Pass**: create 2-3 `feature-dev-code-explorer` child agents to independently map similar features, data flow, conventions, tests, and risks.
+3. **Clarifying Questions and Scope Approval**: present unresolved decisions that materially affect the design; high-risk and critical decisions require explicit approval.
+4. **Architecture Design Pass**: create 2-3 `feature-dev-code-architect` child agents to compare minimum-change, maintainability, and risk/compatibility approaches.
+5. **Approved Implementation**: present the recommended architecture, trade-offs, file scope, migration or rollback plan, and test plan. Medium and high-risk work cannot modify production code before architecture approval.
+6. **Quality Review Pass**: after implementation and focused verification, create 2-3 `feature-dev-code-reviewer` child agents to independently assess correctness, regression, conventions, tests, and risk.
+7. **Approved Summary**: present the review disposition for explicit approval; then apply approved fixes, verify the result, and deliver the final summary.
 
-Child agents are read-only and return structured findings. Only the orchestrator can modify code and planning files, avoiding concurrent-write conflicts.
-
+Child agents are read-only and return structured reports. Only the orchestrator edits source code and planning files, preventing concurrent write conflicts.
 ## Approval Gates
 
 This plugin does not silently advance critical decisions:
