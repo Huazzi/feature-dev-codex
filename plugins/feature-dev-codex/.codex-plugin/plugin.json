@@ -1,6 +1,6 @@
 {
   "name": "feature-dev-codex",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Multi-agent, approval-gated feature development workflow for Codex.",
   "author": {
     "name": "Huazzi"
@@ -18,8 +18,8 @@
   "interface": {
     "displayName": "Feature Dev Codex",
     "shortDescription": "Approval-gated, multi-agent feature development.",
-    "longDescription": "A Codex-native feature workflow with independent exploration, architecture, and review passes, persistent planning files, and mandatory approval gates for important decisions.",
-    "developerName": "Anthropic workflow adapted locally",
+    "longDescription": "A Codex-native seven-phase feature workflow with independent exploration, architecture, and review passes, persistent planning files, and mandatory approval gates for important decisions.",
+    "developerName": "Huazzi",
     "category": "Productivity",
     "capabilities": [
       "Read",

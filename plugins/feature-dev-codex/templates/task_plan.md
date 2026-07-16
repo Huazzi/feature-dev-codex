@@ -3,30 +3,57 @@
 - Feature:
 - Plan ID:
 - Risk classification: simple | medium | high
-- Current phase:
+- Current phase: 1 - Discovery and Planning
 - Owner: feature-dev-codex orchestrator
 
 ## Approval Gates
 
 | Gate | Decision | Status | User approval |
 | --- | --- | --- | --- |
-| A | Scope and critical decisions | pending | pending |
-| B | Architecture selection | pending | pending |
-| C | Review disposition | pending | pending |
+| A | Scope and critical decisions | pending when required | pending |
+| B | Architecture selection | pending for medium/high work | pending |
+| C | Review disposition | pending after review | pending |
 
-## Phases
+## Seven Phases
 
-- [ ] Discovery and risk classification
-- [ ] Exploration pass complete
-- [ ] Gate A resolved when required
-- [ ] Architecture pass complete
-- [ ] Gate B approved
-- [ ] Implementation complete
-- [ ] Verification complete
-- [ ] Review pass complete
-- [ ] Gate C approved
-- [ ] Final summary delivered
+- [ ] 1. Discovery and planning complete
+- [ ] 2. Codebase exploration pass complete
+- [ ] 3. Clarifying questions and Gate A resolved when required
+- [ ] 4. Architecture design pass complete
+- [ ] 5. Gate B approved and implementation complete
+- [ ] 6. Verification and quality review pass complete
+- [ ] 7. Gate C approved and final summary delivered
 
 ## Constraints and Non-Goals
 
-- 
+-
+
+## Phase Notes
+
+### Phase 1: Discovery
+
+-
+
+### Phase 2: Exploration
+
+-
+
+### Phase 3: Clarification
+
+-
+
+### Phase 4: Architecture
+
+-
+
+### Phase 5: Implementation
+
+-
+
+### Phase 6: Review
+
+-
+
+### Phase 7: Summary
+
+-
