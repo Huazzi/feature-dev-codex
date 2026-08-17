@@ -111,6 +111,25 @@ ATTRIBUTION.md
 
 > 不同版本的 Codex 界面文案可能略有不同；关键是先添加该 Git 仓库作为 Marketplace，再安装其中的 `feature-dev-codex` 插件。
 
+### 通过 Codex CLI 全局安装
+
+在任意目录执行：
+
+```powershell
+codex plugin marketplace add Huazzi/feature-dev-codex --ref master
+codex plugin list --marketplace huazzi-plugins --available
+codex plugin add feature-dev-codex@huazzi-plugins
+```
+
+如果已经 clone 到本地，也可以直接把本地仓库作为 Marketplace：
+
+```powershell
+codex plugin marketplace add D:\Codes\plugins\feature-dev-codex
+codex plugin add feature-dev-codex@huazzi-plugins
+```
+
+请使用完整选择器 `feature-dev-codex@huazzi-plugins`。如果本机曾经安装过同名的个人插件，直接写 `feature-dev-codex` 可能会匹配到其他 Marketplace 中的旧版本。
+
 ### 验证安装
 
 对中大型功能使用“快速开始”中的提示后，插件会在项目中创建：

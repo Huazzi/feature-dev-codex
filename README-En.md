@@ -111,6 +111,25 @@ ATTRIBUTION.md
 
 > Labels may vary slightly between Codex versions. The essential steps are to add this Git repository as a Marketplace, then install the `feature-dev-codex` plugin from it.
 
+### Install Globally Through the Codex CLI
+
+Run from any directory:
+
+```powershell
+codex plugin marketplace add Huazzi/feature-dev-codex --ref master
+codex plugin list --marketplace huazzi-plugins --available
+codex plugin add feature-dev-codex@huazzi-plugins
+```
+
+If you already cloned the repository locally, you can add the local checkout as the Marketplace:
+
+```powershell
+codex plugin marketplace add D:\Codes\plugins\feature-dev-codex
+codex plugin add feature-dev-codex@huazzi-plugins
+```
+
+Use the full selector `feature-dev-codex@huazzi-plugins`. If another Marketplace on the same machine already contains a plugin with the same name, using only `feature-dev-codex` may install an older plugin from that other Marketplace.
+
 ### Verify Installation
 
 Use the prompt in [Quick Start](#quick-start) for a medium-to-large feature. The plugin should create:
