@@ -1,6 +1,6 @@
 {
   "name": "feature-dev-codex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Multi-agent, approval-gated feature development workflow for Codex.",
   "author": {
     "name": "Huazzi"

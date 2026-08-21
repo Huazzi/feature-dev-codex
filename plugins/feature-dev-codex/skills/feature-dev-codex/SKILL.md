@@ -124,7 +124,15 @@ Only after Gate B approval:
 
 Only after implementation and focused verification, create at least two `feature-dev-code-reviewer` child agents for medium work and three for high-risk work. Split the review lenses: correctness/regression, architecture/conventions, and tests/security/migration.
 
-Give each child agent the actual diff, relevant plan files, and the instruction to use the `feature-dev-code-reviewer` role. Consolidate findings in `review.md`, then enforce Gate C.
+Give each child agent the instruction to use the `feature-dev-code-reviewer` role and a stable review envelope:
+
+- Project root.
+- Review lens as an emphasis, not an exclusion.
+- Review target selector: workspace, commit hash, or `from`/`to` range refs.
+- Relevant plan files, approved architecture, and verification already run.
+- Optional background context, repeatable diff command, or actual diff artifact for convenience.
+
+Do not preselect reviewed files or exclusions for the reviewer unless the user explicitly narrowed the review scope. The reviewer owns scope resolution: it should prefer `$open-code-review-delegate` with `ocr delegate`, then fall back inside `feature-dev-code-reviewer` to native Git or complete diff artifact review when OCR delegation is unavailable. Consolidate findings, scope source, reviewed paths, OCR exclusions when available, fallback limits, and verification gaps in `review.md`, then enforce Gate C.
 
 ### Phase 7: Approved Summary
 

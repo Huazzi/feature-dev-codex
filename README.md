@@ -24,6 +24,12 @@
 - `feature-dev-code-architect`：只读架构设计角色。
 - `feature-dev-code-reviewer`：只读实现后审查角色。
 
+## 推荐审查依赖
+
+`feature-dev-code-reviewer` 会优先使用 `$open-code-review-delegate` 与 `ocr delegate` 来获得确定性的审查文件列表、排除原因和规则分组。该依赖不会随本 plugin 打包；如需最佳审查路径，建议单独安装 `open-code-review-delegate` skill，并确保本机可运行 `ocr delegate`。
+
+如果该 skill 或 `ocr delegate` 不可用，`feature-dev-code-reviewer` 仍会在自身内部降级为基于 Git 或完整 diff artifact 的只读审查，并在报告中说明 OCR 规则和排除信息不可用。
+
 ## 适用范围
 
 优先在以下场景显式使用 `feature-dev-codex`：

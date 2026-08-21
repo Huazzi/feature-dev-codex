@@ -24,6 +24,12 @@ For medium-complexity or high-risk tasks, the plugin first completes exploration
 - `feature-dev-code-architect`: a read-only architecture-design role.
 - `feature-dev-code-reviewer`: a read-only post-implementation review role.
 
+## Recommended Review Dependency
+
+`feature-dev-code-reviewer` prefers `$open-code-review-delegate` with `ocr delegate` to obtain deterministic reviewable files, exclusion reasons, and rule groups. This dependency is not bundled with this plugin; for the best review path, install the `open-code-review-delegate` skill separately and make sure `ocr delegate` runs locally.
+
+If that skill or `ocr delegate` is unavailable, `feature-dev-code-reviewer` still falls back internally to read-only Git-based or complete diff artifact review and reports that OCR rules and exclusions were unavailable.
+
 ## When to Use It
 
 Explicitly use `feature-dev-codex` when the work involves:
