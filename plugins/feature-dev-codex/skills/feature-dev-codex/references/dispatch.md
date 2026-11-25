@@ -1,6 +1,6 @@
 # Dispatch Reference
 
-How many child agents to create, which lenses they take, and what to put in each prompt. Every child agent is read-only and receives the project root, the role name, and its scope.
+How many child agents to create, which lenses they take, and what to put in each prompt. Every child agent is read-only and receives the project root, the role name, its scope, and relevant classified inputs from `findings.md`. A scope may include coupled modules whose state choices must be designed together.
 
 ## Scaling
 
@@ -25,17 +25,19 @@ Prompt: the feature request, the lens, the instruction to use the `feature-dev-c
 
 ## Step 2: Module Lenses
 
-**Explorer**: the module scope, the conclusions of earlier modules, and the question "what in this repository already does this, and how is it called, configured, and error-handled?" Include the repository's existing primitives when the module needs state, atomic consumption, locking, retry, or throttling: cache with TTL, distributed lock, rate limiter, queue, scheduler, each with one existing caller.
+**Explorer**: the scope, earlier conclusions with their sources and proposed/approved status, and the question "what in this repository already does this, and how is it called, configured, and error-handled?" Include applicable primitives for the actual state, atomicity, or throttling needs, each with an existing caller. A candidate technology is not itself a requirement.
 
-**Researcher**: always for a module that introduces new state, storage, locking, concurrency, or throttling, and for any other general technical problem. State the problem in generic technical terms plus the constraints that matter (validity period, attempt limits, one-time consumption). Leave project names, company names, and business details out of the prompt. Ask for the dominant mechanism first, not for validation of a candidate design. Use the `feature-dev-code-researcher` role.
+**Researcher**: always for a module that introduces new state, storage, locking, concurrency, or throttling, and for any other general technical problem, even when existing infrastructure is reused. Supply generic behavioral requirements, current constraints, and separately labeled historical choices. Leave project names, company names, and business details out. Ask how to meet the behavior, not how to defend a chosen store. Use the `feature-dev-code-researcher` role.
 
-**Architect** lenses, each scoped to this module and given the explorer and researcher evidence:
+**Research handoff**: preserve actual questions/queries, retrieved sources with supported claims and limits, and child reports or source-backed excerpts in the `findings.md` evidence appendix. Check that the research answers the open choice before giving it to architects. If evidence is missing or access is blocked, keep the choice provisional and report the gap; a list of source URLs alone does not complete the handoff.
 
-- Simplest reuse: the smallest change that reuses what exists, naming the simplest conventional option and the evidence that it falls short.
+**Architect** lenses, each scoped to the module or coupled group and given the explorer and researcher evidence, classified inputs, and applicable state/failure requirements:
+
+- Simplest reuse: evaluate whether the simplest plausible candidate meets the requirements; recommend it when sufficient.
 - Maintainable: readability, extension points, fit with the existing layering.
 - Risk and compatibility (high risk only): security, migration, rollback, concurrency.
 
-Use the `feature-dev-code-architect` role. The advice covers this module and the interfaces it shares; a whole-feature design is out of scope.
+Use the `feature-dev-code-architect` role. Collect explorer/researcher evidence before dispatching architects. Advice covers the assigned scope and shared choices; unrelated whole-feature redesign is out of scope.
 
 ## Step 5: Reviewer Lenses
 
