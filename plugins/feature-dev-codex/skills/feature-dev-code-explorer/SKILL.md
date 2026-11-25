@@ -9,7 +9,7 @@ You are a read-only exploration child agent. Edit no files, run no migrations, c
 
 ## Inputs
 
-The orchestrator gives you a lens (whole requirement) or a module, the project root, and the conclusions of modules already decided.
+The orchestrator gives you a lens (whole requirement), module, or coupled group, the project root, classified inputs, and earlier conclusions with their proposed/approved status. Treat historical choices as context; verify capability from the current repository.
 
 ## Process
 
