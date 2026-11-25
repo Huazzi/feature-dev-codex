@@ -46,7 +46,7 @@ Prompt each reviewer with the `feature-dev-code-reviewer` role and a stable enve
 - Project root.
 - Review lens as emphasis, not exclusion.
 - Target selector: workspace, commit hash, or `from`/`to` refs.
-- Relevant plan files, the approved plan, and verification already run.
+- Relevant plan files (`architecture.md`, `design-review.md`), the repository rules or `conventions.md`, and verification already run.
 - Optional background, a repeatable diff command, or a diff artifact.
 
 Leave file selection and exclusions to the reviewer unless the user narrowed the scope.

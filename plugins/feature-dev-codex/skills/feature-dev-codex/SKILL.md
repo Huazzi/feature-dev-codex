@@ -69,19 +69,25 @@ Present `design-review.md`, including the module split. Decision list items foll
 
 ## Step 4: Implement Module by Module
 
-Before each module, state the applicable repository rules (or `conventions.md`), the reference implementation, and the packages and files you expect to change. Implement under the existing responsibility that fits, with readable methods and data structures. Verify the module against its acceptance scenarios before starting the next one, and log milestones in `progress.md`.
+Take modules in dependency order. For each module:
 
-When the plan conflicts with the code, state the impact, return to Step 2 for that module, and re-run Gate 1 for it when the change is material.
+1. Record an implementation declaration in `progress.md`: the applicable repository rules (or `conventions.md`), the reference implementation, and the packages and files you expect to change, consistent with the file map in `architecture.md`.
+2. Implement under the existing responsibility that fits. New code sits in the package and layer where the reference implementation sits, uses the project's existing HTTP tooling, exception handling, and response models, and keeps methods and data structures readable.
+3. Run the module's acceptance scenarios and record each result in `progress.md` before starting the next module.
 
-Mark each module `verified`, `partial`, or `failed` in `task_plan.md` after running its acceptance scenarios; only `verified` counts as done.
+Log every departure from the planned file map under Deviations in `progress.md`. When the plan conflicts with the code, state the impact, return to Step 2 for that module, and re-run Gate 1 for it when the change is material.
 
-Done when every module is `verified`.
+Mark each module `verified`, `partial`, or `failed` in `task_plan.md`; only `verified` counts as done.
+
+Done when every module is `verified` and the declared files match the files changed, or each difference is logged.
 
 ## Step 5: Verify and Review
 
-1. Verify success, boundary, and failure scenarios per module, then run the cross-module main flow.
+1. Verify success, boundary, and failure scenarios per module, then run the cross-module main flow. Record each acceptance scenario's result in `progress.md`.
 2. Check existing callers and tests: compile all test sources so no reference to replaced code remains, then run the related tests.
 3. Dispatch reviewers; see [references/dispatch.md](references/dispatch.md). The reviewer owns scope resolution and prefers `$open-code-review-delegate`. Consolidate scope source, reviewed paths, exclusions, fallback limits, and verification gaps in `review.md`.
+
+Done when every acceptance scenario has a recorded result and `review.md` holds the reviewer reports.
 
 ### Gate 2: Review Disposition
 
