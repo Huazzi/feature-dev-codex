@@ -1,6 +1,6 @@
 # Project Conventions
 
-Create this file only when the repository has no written rules. Record what the existing code does, each item with a sample file path. Ask a teammate who knows the project to check it before relying on it.
+Create this file only when the repository has no written rules. Record what the existing code does, each item with a sample file path. Review by a teammate who knows the project is optional, not a prerequisite for design or implementation. Proceed using verified observations; record uncertainties below and clarify those that materially affect the design or acceptance criteria.
 
 - Sources inspected:
 - Date:

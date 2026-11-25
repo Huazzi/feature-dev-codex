@@ -87,7 +87,9 @@ Done when every module is `verified` and the declared files match the files chan
 2. Check existing callers and tests: compile all test sources so no reference to replaced code remains, then run the related tests.
 3. Dispatch reviewers; see [references/dispatch.md](references/dispatch.md). The reviewer owns scope resolution and prefers `$open-code-review-delegate`. Consolidate scope source, reviewed paths, exclusions, fallback limits, and verification gaps in `review.md`.
 
-Done when every acceptance scenario has a recorded result and `review.md` holds the reviewer reports.
+After each verification run, including runs after Gate 2 fixes, update the scenario results in `progress.md` and the affected module statuses in `task_plan.md`. A failed required check makes the affected modules `failed`; incomplete or unavailable required checks make them `partial` unless a failure remains. Clear any completion marks that depended on the invalidated results. Restore `verified` only when all required checks for the affected modules pass.
+
+Done when all required module, cross-module, and regression checks pass with recorded evidence and `review.md` holds the reviewer reports. Failed or partial results may still go to Gate 2 for a repair decision; Step 5 stays incomplete until these checks pass.
 
 ### Gate 2: Review Disposition
 
@@ -95,4 +97,8 @@ Present findings with confidence, severity, and a proposed disposition. Make rev
 
 ## Completion
 
-After Gate 2, apply approved changes, rerun focused verification, and deliver a summary: what changed, verification results, outstanding items, accepted risks. Mark `task_plan.md` complete. Medium and high-risk work is complete only after Gate 2.
+After Gate 2, apply approved changes and rerun the required checks affected by them, including cross-module and regression checks where applicable. Update verification states as described in Step 5.
+
+Mark `task_plan.md` complete only when Gate 2 is approved, its agreed actions are finished, every module is `verified`, and all required checks pass on the final implementation. Approval or acceptance of residual risks does not turn failed or unavailable required checks into passes. Otherwise keep the task incomplete, continue the approved repairs, or report the verification blocker and remaining work.
+
+Deliver a summary of what changed, verification results, outstanding items, accepted risks, and whether the completion conditions were met.
