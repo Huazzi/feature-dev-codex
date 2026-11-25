@@ -1,7 +1,7 @@
 {
   "name": "feature-dev-codex",
-  "version": "0.2.1",
-  "description": "Multi-agent, approval-gated feature development workflow for Codex.",
+  "version": "0.3.0",
+  "description": "Module-by-module, reuse-first feature development workflow for Codex with human-reviewable plans and two approval gates.",
   "author": {
     "name": "Huazzi"
   },
@@ -17,8 +17,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Feature Dev Codex",
-    "shortDescription": "Approval-gated, multi-agent feature development.",
-    "longDescription": "A Codex-native seven-phase feature workflow with independent exploration, architecture, and review passes, persistent planning files, and mandatory approval gates for important decisions.",
+    "shortDescription": "Split into modules, reuse first, review one readable plan.",
+    "longDescription": "A Codex-native five-step feature workflow: explore and split the requirement into modules, verify reuse of existing code and public practice per module, write a human-reviewable plan, implement module by module under the team's conventions, then review independently. Persistent planning files and two approval gates control key decisions.",
     "developerName": "Huazzi",
     "category": "Productivity",
     "capabilities": [
@@ -29,8 +29,8 @@
       "Multi-agent"
     ],
     "defaultPrompt": [
-      "Use feature-dev-codex to plan this feature.",
-      "Explore and propose an architecture before coding.",
+      "Use feature-dev-codex to split this feature into modules and plan it.",
+      "Check existing code and public practice before designing.",
       "Run a high-risk feature workflow with approval gates."
     ]
   }

@@ -2,7 +2,8 @@
 
 ## Review Inputs
 
-- Approved architecture:
+- Approved plan (`architecture.md`, `design-review.md`):
+- Repository rules or `conventions.md`:
 - Diff reviewed:
 - Verification already run:
 
@@ -20,8 +21,10 @@
 
 ## Findings
 
-| Severity | Confidence | Location | Finding | Proposed disposition |
-| --- | --- | --- | --- | --- |
+Category: correctness, security, performance, compatibility, migration, test, maintainability, convention, or complexity.
+
+| Severity | Confidence | Category | Location | Finding | Proposed disposition |
+| --- | --- | --- | --- | --- | --- |
 
 ## Coverage Limits and Verification Gaps
 
@@ -31,7 +34,7 @@
 
 - 
 
-## Gate C Approval
+## Gate 2 Approval
 
 - Proposed actions:
 - User approval:

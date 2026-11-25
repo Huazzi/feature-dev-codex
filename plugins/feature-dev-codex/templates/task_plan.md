@@ -3,57 +3,70 @@
 - Feature:
 - Plan ID:
 - Risk classification: simple | medium | high
-- Current phase: 1 - Discovery and Planning
+- Current step: 1 - Explore and split
 - Owner: feature-dev-codex orchestrator
 
-## Approval Gates
+## User Operations and Expected Results
 
-| Gate | Decision | Status | User approval |
-| --- | --- | --- | --- |
-| A | Scope and critical decisions | pending when required | pending |
-| B | Architecture selection | pending for medium/high work | pending |
-| C | Review disposition | pending after review | pending |
-
-## Seven Phases
-
-- [ ] 1. Discovery and planning complete
-- [ ] 2. Codebase exploration pass complete
-- [ ] 3. Clarifying questions and Gate A resolved when required
-- [ ] 4. Architecture design pass complete
-- [ ] 5. Gate B approved and implementation complete
-- [ ] 6. Verification and quality review pass complete
-- [ ] 7. Gate C approved and final summary delivered
+| # | User operation | Expected result |
+| --- | --- | --- |
 
 ## Constraints and Non-Goals
 
 -
 
-## Phase Notes
+## Written Repository Rules
 
-### Phase 1: Discovery
+- Found (paths):
+- None found: create `.planning/conventions.md` from the template
 
--
+## Clarification Log
 
-### Phase 2: Exploration
-
--
-
-### Phase 3: Clarification
+Record each accepted answer as `Q -> A` with the date. Unresolved items stay as `[NEEDS CLARIFICATION: ...]`.
 
 -
 
-### Phase 4: Architecture
+## Modules
+
+Acceptance scenarios use Given / When / Then. Verification is `pending`, `verified`, `partial`, or `failed`; only `verified` counts as done.
+
+| Module | Responsibility | Depends on | Acceptance scenarios | Independent verification | Contracts to confirm | Step 2 | Step 4 | Verification |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+## Approval Gates
+
+| Gate | Decision | Status | User approval |
+| --- | --- | --- | --- |
+| 1 | Plan approval (module split and plan) | pending | pending |
+| 2 | Review disposition | pending | pending |
+
+## Steps
+
+- [ ] 1. Explore and split complete
+- [ ] 2. Reuse verified and approach decided for every module
+- [ ] 3. Plan written and Gate 1 approved
+- [ ] 4. Every module implemented and verified
+- [ ] 5. Verification and review complete, Gate 2 approved
+- [ ] Final summary delivered
+
+## Step Notes
+
+### Step 1: Explore and Split
 
 -
 
-### Phase 5: Implementation
+### Step 2: Reuse and Decisions
 
 -
 
-### Phase 6: Review
+### Step 3: Plan
 
 -
 
-### Phase 7: Summary
+### Step 4: Implementation
+
+-
+
+### Step 5: Verification and Review
 
 -
