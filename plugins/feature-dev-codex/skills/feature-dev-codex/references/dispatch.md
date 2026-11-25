@@ -25,13 +25,13 @@ Prompt: the feature request, the lens, the instruction to use the `feature-dev-c
 
 ## Step 2: Module Lenses
 
-**Explorer**: the module scope, the conclusions of earlier modules, and the question "what in this repository already does this, and how is it called, configured, and error-handled?"
+**Explorer**: the module scope, the conclusions of earlier modules, and the question "what in this repository already does this, and how is it called, configured, and error-handled?" Include the repository's existing primitives when the module needs state, atomic consumption, locking, retry, or throttling: cache with TTL, distributed lock, rate limiter, queue, scheduler, each with one existing caller.
 
-**Researcher** (general technical problems only): state the problem in generic technical terms plus the constraints that matter (validity period, attempt limits, one-time consumption). Leave project names, company names, and business details out of the prompt. Use the `feature-dev-code-researcher` role.
+**Researcher**: always for a module that introduces new state, storage, locking, concurrency, or throttling, and for any other general technical problem. State the problem in generic technical terms plus the constraints that matter (validity period, attempt limits, one-time consumption). Leave project names, company names, and business details out of the prompt. Ask for the dominant mechanism first, not for validation of a candidate design. Use the `feature-dev-code-researcher` role.
 
 **Architect** lenses, each scoped to this module and given the explorer and researcher evidence:
 
-- Simplest reuse: the smallest change that reuses what exists.
+- Simplest reuse: the smallest change that reuses what exists, naming the simplest conventional option and the evidence that it falls short.
 - Maintainable: readability, extension points, fit with the existing layering.
 - Risk and compatibility (high risk only): security, migration, rollback, concurrency.
 

@@ -7,6 +7,7 @@ Final plan only, for agents. Keep the chosen approach and concrete paths per mod
 - Feature:
 - Risk classification:
 - Modules (see `task_plan.md`):
+- Inherited decisions and their outcome (see `findings.md`):
 
 ## Module: <name>
 
@@ -14,6 +15,7 @@ Final plan only, for agents. Keep the chosen approach and concrete paths per mod
 - Evidence: existing code paths reused or extended; public practice links
 - Files to create or modify:
 - Interfaces shared with other modules:
+- Design couplings: choices here that force a constraint on another module
 - Data flow and error handling:
 - Acceptance scenarios covered (ids from `task_plan.md`):
 - Test plan and verification commands:
@@ -24,8 +26,8 @@ Final plan only, for agents. Keep the chosen approach and concrete paths per mod
 
 One row per new component, store, or abstraction. Leave the table empty when nothing new is introduced.
 
-| New element | Why needed | Simpler alternative rejected because |
-| --- | --- | --- |
+| New element | Why needed | Simplest conventional option | Why it is not enough (evidence) |
+| --- | --- | --- | --- |
 
 ## Decisions Pending User
 
