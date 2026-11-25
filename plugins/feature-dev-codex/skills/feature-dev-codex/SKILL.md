@@ -41,7 +41,8 @@ Language: `design-review.md` is written in Chinese for the human reviewer. Other
 2. Look for written repository rules (`docs/coding-styles`, `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, similar). Record the paths. When none exist, create `.planning/conventions.md` from the template as the exploration reports come in: package structure, layering, naming, exception and response models, HTTP tooling, test style, each with a sample file path.
 3. Dispatch whole-requirement explorers; see [references/dispatch.md](references/dispatch.md). Read the cited files yourself and record verified facts in `findings.md`.
 4. Split the requirement into modules. A module is a part that can be delivered and verified independently; behaviors that share rules are designed together. Record for each module: responsibility, dependencies, acceptance scenarios, and contracts that need joint confirmation. A requirement that does not split stays one module.
-5. Ask the user clarifying questions whenever an ambiguity changes the design. Clarifying is not a gate.
+5. Clarify with the user whenever an ambiguity changes the design or the tests, following [references/clarification.md](references/clarification.md). Clarifying is not a gate. Mark anything still unknown `[NEEDS CLARIFICATION: ...]` rather than guessing.
+6. Stop with a recorded reason when the repository already satisfies the requirement: write the evidence into `task_plan.md` and report it. A stop with evidence is a valid result.
 
 Done when every user operation maps to a module, every module has acceptance scenarios, and `findings.md` holds only verified facts.
 
@@ -58,13 +59,13 @@ Done when each module has a recommended approach, evidence, rationale, and open 
 
 ## Step 3: Write the Plan for Human Review
 
-Write `architecture.md` (structured, per module, for agents) and `design-review.md` (Chinese, for the reviewer) from the templates. The reviewer must understand the flow before deciding, so `design-review.md` keeps this order: overview, user flow and expected behavior (Mermaid when the flow is complex), necessary technical background, per-module plan, decision list with recommendation and rationale, not-doing list, appendix for field-level detail. Body target is about 3000 characters, adjustable to the task; cut before expanding.
+Write `architecture.md` (structured, per module, for agents) and `design-review.md` (Chinese, for the reviewer) from the templates. The reviewer must understand the flow before deciding, so `design-review.md` keeps this order: overview, user flow and expected behavior (Mermaid when the flow is complex), necessary technical background, per-module plan, decision list with recommendation and rationale, not-doing list, appendix for field-level detail. Body target is about 3000 characters, adjustable to the task; cut before expanding. `architecture.md` keeps only the chosen approach per module; alternatives appear in the decision list. Every new component, store, or abstraction gets a row in the complexity justification table: why it is needed and why a simpler option does not suffice.
 
-Done when the template's self-check passes.
+Done when the template's self-check passes and every `[NEEDS CLARIFICATION]` is resolved or carried into the decision list.
 
 ### Gate 1: Plan Approval
 
-Present `design-review.md`, including the module split. Record the decisions in `architecture.md` and `task_plan.md`. Edit production code only after explicit approval; high-risk work cannot bypass this gate. Adjustments return to Step 2 for the affected modules only.
+Present `design-review.md`, including the module split. Decision list items follow [references/clarification.md](references/clarification.md). Record the decisions in `architecture.md` and `task_plan.md`. Edit production code only after explicit approval; high-risk work cannot bypass this gate. Adjustments return to Step 2 for the affected modules only.
 
 ## Step 4: Implement Module by Module
 
@@ -72,7 +73,9 @@ Before each module, state the applicable repository rules (or `conventions.md`),
 
 When the plan conflicts with the code, state the impact, return to Step 2 for that module, and re-run Gate 1 for it when the change is material.
 
-Done when every module passes its acceptance scenarios.
+Mark each module `verified`, `partial`, or `failed` in `task_plan.md` after running its acceptance scenarios; only `verified` counts as done.
+
+Done when every module is `verified`.
 
 ## Step 5: Verify and Review
 

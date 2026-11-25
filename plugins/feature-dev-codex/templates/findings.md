@@ -29,7 +29,7 @@
 - Recommendation:
 - Why, and why not something simpler:
 - Not doing:
-- Open questions:
+- Open questions: (write unresolved items as `[NEEDS CLARIFICATION: ...]`)
 
 ### Essential Files
 

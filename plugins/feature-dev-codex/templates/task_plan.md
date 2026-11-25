@@ -20,10 +20,18 @@
 - Found (paths):
 - None found: create `.planning/conventions.md` from the template
 
+## Clarification Log
+
+Record each accepted answer as `Q -> A` with the date. Unresolved items stay as `[NEEDS CLARIFICATION: ...]`.
+
+-
+
 ## Modules
 
-| Module | Responsibility | Depends on | Acceptance scenarios | Contracts to confirm | Step 2 | Step 4 | Verified |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+Acceptance scenarios use Given / When / Then. Verification is `pending`, `verified`, `partial`, or `failed`; only `verified` counts as done.
+
+| Module | Responsibility | Depends on | Acceptance scenarios | Independent verification | Contracts to confirm | Step 2 | Step 4 | Verification |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 ## Approval Gates
 

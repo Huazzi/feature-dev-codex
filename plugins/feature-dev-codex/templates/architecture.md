@@ -1,35 +1,42 @@
-# Architecture Decision
+# Architecture Decisions
+
+Final plan only, for agents. Keep the chosen approach and concrete paths per module; alternatives live in the decision list of `design-review.md`. Mark anything unknown as `[NEEDS CLARIFICATION: ...]` instead of guessing.
 
 ## Context
 
-- 
+- Feature:
+- Risk classification:
+- Modules (see `task_plan.md`):
 
-## Options Considered
+## Module: <name>
 
-### Option A
-
-- Design:
-- Benefits:
-- Costs and risks:
-
-### Option B
-
-- Design:
-- Benefits:
-- Costs and risks:
-
-## Recommended Option
-
-- Recommendation:
-- Rationale:
-- File change map:
+- Decision:
+- Evidence: existing code paths reused or extended; public practice links
+- Files to create or modify:
+- Interfaces shared with other modules:
 - Data flow and error handling:
-- Test plan:
-- Migration or rollback plan:
+- Acceptance scenarios covered (ids from `task_plan.md`):
+- Test plan and verification commands:
+- Compatibility or rollback notes:
+- Not doing:
 
-## Gate B Approval
+## Complexity Justification
 
-- Proposed choice:
+One row per new component, store, or abstraction. Leave the table empty when nothing new is introduced.
+
+| New element | Why needed | Simpler alternative rejected because |
+| --- | --- | --- |
+
+## Decisions Pending User
+
+Copied into the decision list of `design-review.md`.
+
+| # | Question | Options | Recommendation |
+| --- | --- | --- | --- |
+
+## Gate 1 Approval
+
+- Approved decisions:
 - User approval:
 - Approval timestamp:
 - Material changes after approval:
