@@ -49,7 +49,8 @@ Describe behavioral needs before selecting primitives. For applicable state, ato
 - Simplest plausible candidate and sufficiency verdict:
 - Requirement-to-evidence reasoning (gap and remedy only if insufficient):
 - Not doing:
-- Open questions: (write unresolved items as `[NEEDS CLARIFICATION: ...]`)
+- User decisions: (write unanswered decisions as `[NEEDS CLARIFICATION: ...]`)
+- Technical evidence: (reference check IDs below; keep essential unresolved choices provisional)
 
 ### Essential Files
 
@@ -69,13 +70,20 @@ Jointly compare choices that constrain each other before fixing either. Record t
 
 - 
 
+## Technical Check Evidence
+
+Keep the action/status in `task_plan.md`. Here record each check's actual evidence and result, including failed or unavailable checks; distinguish verified capability from assumptions and remaining environment checks.
+
+| Check ID | Evidence (file, document, or executed check) | Result and limits | Consequence for the approach |
+| --- | --- | --- | --- |
+
 ## Evidence Check Before Gate 1
 
 - Requirement-based reasons for accepting/rejecting candidates:
 - Joint choices reopened or confirmed, and evidence:
 - Source claims and local repair options checked:
-- Outcome: ready for user decisions / return affected choices to Step 2
-- Remaining verification gaps:
+- Outcome: ready for Gate 1 decisions / discussion draft; affected choices remain in Step 2
+- Remaining technical check IDs: (blocking checks versus checks scheduled for later steps)
 
 ## Evidence Appendix
 

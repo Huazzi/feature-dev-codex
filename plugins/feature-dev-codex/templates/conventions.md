@@ -19,4 +19,5 @@ Create this file only when the repository has no written rules. Record what the 
 
 ## Gaps and Unclear Areas
 
-- `[NEEDS CLARIFICATION: ...]`
+- User decisions: `[NEEDS CLARIFICATION: ...]`
+- Technical checks: reference the relevant tasks in the feature's `task_plan.md`.

@@ -27,5 +27,6 @@ Keep it short. One recommendation and at most one useful alternative; do not inv
 - Error handling, plus compatibility, security, performance, or rollback notes where relevant.
 - Test plan and verification commands.
 - Questions that need an explicit user decision.
+- Technical gaps, each with missing evidence, a concrete next check or information request, a completion condition, affected choices, and whether it blocks the approach or belongs to later verification.
 
 Your advice covers the assigned scope. Flag a coupling beyond that scope for joint evaluation instead of fixing the other module's storage by assumption. The orchestrator consolidates lenses and decides what goes to the user.
