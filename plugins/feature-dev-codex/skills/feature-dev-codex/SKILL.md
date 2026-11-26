@@ -4,7 +4,7 @@ description: Use this skill for medium or large feature work that benefits from 
 metadata:
   source: https://github.com/anthropics/claude-code/tree/main/plugins/feature-dev
   adapted-for: Codex
-  workflow-version: 3.4
+  workflow-version: 3.6
 ---
 
 # Feature Dev Codex Orchestrator
@@ -63,9 +63,13 @@ Act on technical gaps using the clarification reference before declaring the aff
 
 ## Step 3: Write the Plan for Human Review
 
+In section 4 of the human review draft, open each module with the template’s **业务功能** paragraph, then **设计方案**. Write for someone who knows the business: explain the mechanism in the user's situation before naming the technical practice, so the reviewer can look it up and judge whether it fits. Follow the template's language guidance throughout the draft.
+
 Write `architecture.md` (structured, per module, for agents) and `design-review.md` (Chinese, for the reviewer) from the templates. The reviewer must understand the flow before deciding, so `design-review.md` keeps this order: overview, user flow and expected behavior (Mermaid when the flow is complex), necessary technical background, per-module plan, decision list with recommendation and rationale, not-doing list, appendix for field-level detail. Body target is about 3000 characters, adjustable to the task; cut before expanding. `architecture.md` keeps the recommended approach per module, marked proposed until approved; alternatives appear in the decision list. For each new component, store, or abstraction, explain its purpose and whether it is part of the simplest sufficient design or closes a demonstrated gap. Record joint decisions once and reference them from affected modules.
 
 Before Gate 1, apply the evidence check in [references/decision-evidence.md](references/decision-evidence.md) and the template's self-check. Return unsupported or circular recommendations to the affected Step 2 choices. Ready for approval when those checks pass, every `[NEEDS CLARIFICATION]` is resolved or presented as a genuine user decision, and technical facts essential to the approach are verified. Otherwise label the document a discussion draft, show the blocking check IDs and next actions, and keep the plan unready for implementation. Non-blocking implementation/environment checks may remain scheduled for their relevant steps.
+
+Before delivering even a discussion draft, check each design claim that relies on external practice against `findings.md` or the supplied material. Link the supporting source beside the claim and identify supplied summaries as such. If support is missing, recast the claim as a project proposal or an open check.
 
 ### Gate 1: Plan Approval
 

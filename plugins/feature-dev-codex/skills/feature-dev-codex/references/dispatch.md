@@ -39,6 +39,12 @@ Prompt: the feature request, the lens, the instruction to use the `feature-dev-c
 
 Use the `feature-dev-code-architect` role. Collect explorer/researcher evidence before dispatching architects. Advice covers the assigned scope and shared choices; unrelated whole-feature redesign is out of scope.
 
+When asking for architecture advice on a material choice, ask for the concrete request, failure, or retry most likely to invalidate the recommendation. Before accepting the advice, follow that scenario from the user's action to the observable result. At each step that the choice depends on, identify what the public example demonstrates, what an existing repository caller actually does, or which contract is still assumed.
+
+When recommending that several changes commit together, interrupt the flow between the changes that justify that boundary. Explain what remains after a known failure, what the user can do on retry, and whether that guarantee is required or proposed. Cover an unknown commit outcome separately when it changes the answer.
+
+Check available code or sources for any missing link. If it still depends on outside evidence, record the specific sample or check needed and what result would change the choice. Keep the choice provisional in both the architecture and the human review draft. Preserve the walkthrough briefly in `findings.md` and carry its decisive step, user-visible consequence and status into `design-review.md`.
+
 ## Step 5: Reviewer Lenses
 
 Correctness and regression; architecture, conventions, and unneeded complexity; tests, security, and migration (the third lens joins for high-risk work, medium work covers it inside the first two).
