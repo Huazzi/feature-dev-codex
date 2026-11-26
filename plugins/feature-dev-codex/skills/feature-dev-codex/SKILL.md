@@ -4,7 +4,7 @@ description: Use this skill for medium or large feature work that benefits from 
 metadata:
   source: https://github.com/anthropics/claude-code/tree/main/plugins/feature-dev
   adapted-for: Codex
-  workflow-version: 3.3
+  workflow-version: 3.4
 ---
 
 # Feature Dev Codex Orchestrator
@@ -56,7 +56,7 @@ Take modules in dependency order. When state or consistency choices depend on ea
 2. Fill the module's reuse comparison in `findings.md`: each need marked reuse, extend, or new, with the existing code path as evidence.
 3. For stateful work, describe lifetime, loss/recovery behavior, required atomic operations, uncertain-result handling, and audit retention before choosing storage. Map these needs to applicable repository primitives (such as cache with TTL, locks, counters, queues), citing the class and an existing caller. See the state section in the decision-evidence reference.
 4. Re-check historical choices against requirements and evidence. Prior approval records a decision, not proof that alternatives fail. Carry a proposed departure to Gate 1; a current explicit constraint remains binding unless changed by the user.
-5. For a general technical problem, record public practice: source link, source type, access date, takeaway, and an applicability check against the project's constraints. Search queries carry the technical problem only, and the question asks how mature projects solve it before judging any one approach.
+5. For a general technical problem, research concrete engineering practice before settling the approach; use the research and handoff criteria in the dispatch reference. External queries omit private identifiers while retaining decision-relevant technical constraints. Record reference implementations or firsthand accounts, mechanisms and flows, applicability limits, and supporting capability/safety evidence in `findings.md`; generic norms alone do not answer an engineering choice.
 6. A real design choice gets architect advice, consolidated into one recommendation plus at most one useful alternative. Evaluate the simplest candidate as sufficient, insufficient, or unknown. Adopt it when sufficient; explain a concrete failure and the added remedy when insufficient; keep an unknown provisional rather than using it to justify complexity. Preserve the research question, supporting sources, and child-report evidence in `findings.md`.
 
 Act on technical gaps using the clarification reference before declaring the affected module's Step 2 complete. Done when each module has an evidence-backed approach or a genuine business decision, applicable state requirements and shared choices have been examined, and added complexity closes a demonstrated gap. Essential unresolved technical checks keep the affected choices provisional and Step 2 incomplete; a discussion draft can still be written. A sufficient simple candidate needs no rejection rationale or artificial alternative.

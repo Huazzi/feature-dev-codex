@@ -40,8 +40,16 @@ Describe behavioral needs before selecting primitives. For applicable state, ato
 
 ### Public Practice (general technical problems only)
 
-| Open question | Source link | Type / evidence kind | Accessed | Supported claim and limits | Applicability / remaining gap |
+Explain concrete solutions before listing supporting capability or safety references. Use problem-relevant dimensions; a source can be official and still describe engineering practice. No fixed number of examples or alternatives is required.
+
+| Candidate / reference project or account | Mechanism, typical flow, and problem addressed | Integration cost / changed user behavior | Fit, limitations, and evidence IDs; demonstrated versus inferred |
+| --- | --- | --- | --- |
+
+| Evidence ID / open question | Source link or code locator/version | Source form / evidence role | Accessed or supplied | Supported claim and limits | Applicability / remaining gap |
 | --- | --- | --- | --- | --- | --- |
+
+- Research handoff: supported for design comparison / provisional / blocked retrieval; explain why
+- Missing direct examples or unanswered choices: searched scope, documented building blocks versus proposed combinations, and technical check IDs
 
 ### Recommended Approach
 

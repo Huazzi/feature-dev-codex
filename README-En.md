@@ -21,7 +21,7 @@ For medium-complexity or high-risk tasks, the plugin explores the current state 
 
 - `feature-dev-codex`: the orchestrator and the only role permitted to modify production code, tests, and planning files.
 - `feature-dev-code-explorer`: a read-only codebase-exploration role that finds reusable implementations and project conventions.
-- `feature-dev-code-researcher`: a read-only public-practice research role that checks official documentation and mature projects and verifies applicability.
+- `feature-dev-code-researcher`: a read-only engineering-practice research role that finds existing implementations and firsthand accounts, explains mechanisms and flows, and verifies applicability.
 - `feature-dev-code-architect`: a read-only architecture role that advises on a single module.
 - `feature-dev-code-reviewer`: a read-only post-implementation review role that checks defects, conformance to project conventions, and unneeded complexity.
 
@@ -53,6 +53,8 @@ For medium-complexity and high-risk work, `feature-dev-codex` follows a **five-s
 5. **Verify and review**: verify success, boundary, and failure scenarios per module, run the cross-module main flow, and check existing callers and tests; then an independent `feature-dev-code-reviewer` pass. **Gate 2 decides the review disposition.**
 
 Child agents are read-only and return structured reports. Only the orchestrator edits source code and planning files, preventing concurrent write conflicts. The number of child agents scales with a module's uncertainty; high-risk work uses three lenses.
+
+Public-practice research prioritizes concrete open-source implementations, product implementation guides, and firsthand engineering accounts, explaining mechanisms, flows, and applicability before checking platform/protocol capabilities and safety requirements. Norms or API names alone do not answer an engineering choice. When no direct example is found, record the search scope, distinguish documented capabilities from inferred combinations, and retain actionable checks.
 
 ## Approval Gates
 
