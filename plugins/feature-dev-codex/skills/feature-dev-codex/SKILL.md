@@ -4,7 +4,7 @@ description: Use this skill for medium or large feature work that benefits from 
 metadata:
   source: https://github.com/anthropics/claude-code/tree/main/plugins/feature-dev
   adapted-for: Codex
-  workflow-version: 3.4
+  workflow-version: 3.5
 ---
 
 # Feature Dev Codex Orchestrator
