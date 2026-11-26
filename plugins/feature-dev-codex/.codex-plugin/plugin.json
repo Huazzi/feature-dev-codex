@@ -1,6 +1,6 @@
 {
   "name": "feature-dev-codex",
-  "version": "0.3.2",
+  "version": "0.3.4",
   "description": "Module-by-module, reuse-first feature development workflow for Codex with human-reviewable plans and two approval gates.",
   "author": {
     "name": "Huazzi"

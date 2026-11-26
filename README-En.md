@@ -21,7 +21,7 @@ For medium-complexity or high-risk tasks, the plugin explores the current state 
 
 - `feature-dev-codex`: the orchestrator and the only role permitted to modify production code, tests, and planning files.
 - `feature-dev-code-explorer`: a read-only codebase-exploration role that finds reusable implementations and project conventions.
-- `feature-dev-code-researcher`: a read-only public-practice research role that checks official documentation and mature projects and verifies applicability.
+- `feature-dev-code-researcher`: a read-only engineering-practice research role that finds existing implementations and firsthand accounts, explains mechanisms and flows, and verifies applicability.
 - `feature-dev-code-architect`: a read-only architecture role that advises on a single module.
 - `feature-dev-code-reviewer`: a read-only post-implementation review role that checks defects, conformance to project conventions, and unneeded complexity.
 
@@ -54,14 +54,17 @@ For medium-complexity and high-risk work, `feature-dev-codex` follows a **five-s
 
 Child agents are read-only and return structured reports. Only the orchestrator edits source code and planning files, preventing concurrent write conflicts. The number of child agents scales with a module's uncertainty; high-risk work uses three lenses.
 
+Public-practice research prioritizes concrete open-source implementations, product implementation guides, and firsthand engineering accounts, explaining mechanisms, flows, and applicability before checking platform/protocol capabilities and safety requirements. Norms or API names alone do not answer an engineering choice. When no direct example is found, record the search scope, distinguish documented capabilities from inferred combinations, and retain actionable checks.
+
 ## Approval Gates
 
 This plugin does not silently advance critical decisions:
 
 - **Gate 1 (plan approval)**: medium-complexity and high-risk work must present `design-review.md` and receive explicit approval before production-code changes begin. Decisions include new tables, migrations, dependencies or stores, proposed changes to historical choices or current constraints, and material joint choices. Revisit all affected modules when adjusting the plan, and synchronize both plan documents and the task plan.
+- Review items start with a recommendation, evidence, and costs; alternatives appear only for real trade-offs. Track technical checks in `task_plan.md` with next actions, required input, completion conditions, and affected modules; keep evidence in `findings.md`. Essential unresolved facts keep the plan a discussion draft even if its direction is approved. Implementation and environment checks that do not change the approach remain due at their relevant later steps.
 - **Gate 2 (review disposition)**: post-implementation review findings must first be presented to the user; the user must approve their disposition before review-driven fixes are made or the task is declared complete.
 - Gate 1 cannot be skipped for high-risk work, even when the user asks to “just do it.”
-- Clarifying questions in Step 1 are not gates; the plugin may ask you at any time during that step.
+- Business clarifications and technical evidence requests are not gates; they can arise throughout planning without waiting for Gate 1.
 
 High-risk work includes authentication, authorization, secrets, PII, payments, irreversible writes or deletions, database or data migrations, public API or compatibility changes, concurrent or distributed behavior, security-sensitive changes, and broad cross-system refactors.
 

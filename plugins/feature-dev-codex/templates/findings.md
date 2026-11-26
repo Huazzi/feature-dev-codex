@@ -40,8 +40,16 @@ Describe behavioral needs before selecting primitives. For applicable state, ato
 
 ### Public Practice (general technical problems only)
 
-| Open question | Source link | Type / evidence kind | Accessed | Supported claim and limits | Applicability / remaining gap |
+Explain concrete solutions before listing supporting capability or safety references. Use problem-relevant dimensions; a source can be official and still describe engineering practice. No fixed number of examples or alternatives is required.
+
+| Candidate / reference project or account | Mechanism, typical flow, and problem addressed | Integration cost / changed user behavior | Fit, limitations, and evidence IDs; demonstrated versus inferred |
+| --- | --- | --- | --- |
+
+| Evidence ID / open question | Source link or code locator/version | Source form / evidence role | Accessed or supplied | Supported claim and limits | Applicability / remaining gap |
 | --- | --- | --- | --- | --- | --- |
+
+- Research handoff: supported for design comparison / provisional / blocked retrieval; explain why
+- Missing direct examples or unanswered choices: searched scope, documented building blocks versus proposed combinations, and technical check IDs
 
 ### Recommended Approach
 
@@ -49,7 +57,8 @@ Describe behavioral needs before selecting primitives. For applicable state, ato
 - Simplest plausible candidate and sufficiency verdict:
 - Requirement-to-evidence reasoning (gap and remedy only if insufficient):
 - Not doing:
-- Open questions: (write unresolved items as `[NEEDS CLARIFICATION: ...]`)
+- User decisions: (write unanswered decisions as `[NEEDS CLARIFICATION: ...]`)
+- Technical evidence: (reference check IDs below; keep essential unresolved choices provisional)
 
 ### Essential Files
 
@@ -69,13 +78,20 @@ Jointly compare choices that constrain each other before fixing either. Record t
 
 - 
 
+## Technical Check Evidence
+
+Keep the action/status in `task_plan.md`. Here record each check's actual evidence and result, including failed or unavailable checks; distinguish verified capability from assumptions and remaining environment checks.
+
+| Check ID | Evidence (file, document, or executed check) | Result and limits | Consequence for the approach |
+| --- | --- | --- | --- |
+
 ## Evidence Check Before Gate 1
 
 - Requirement-based reasons for accepting/rejecting candidates:
 - Joint choices reopened or confirmed, and evidence:
 - Source claims and local repair options checked:
-- Outcome: ready for user decisions / return affected choices to Step 2
-- Remaining verification gaps:
+- Outcome: ready for Gate 1 decisions / discussion draft; affected choices remain in Step 2
+- Remaining technical check IDs: (blocking checks versus checks scheduled for later steps)
 
 ## Evidence Appendix
 

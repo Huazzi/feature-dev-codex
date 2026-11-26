@@ -1,6 +1,6 @@
 # Architecture Decisions
 
-Plan for agents. Keep the recommended approach and concrete paths per module, marked proposed until approved; alternatives live in the decision list of `design-review.md`. Mark anything unknown as `[NEEDS CLARIFICATION: ...]` instead of guessing.
+Plan for agents. Keep the recommended approach and concrete paths per module, marked proposed until approved; useful alternatives live in the decision list of `design-review.md`. Mark unanswered user decisions as `[NEEDS CLARIFICATION: ...]`; reference technical check IDs from `task_plan.md` for unverified facts. Direction approval does not resolve those checks.
 
 ## Context
 
@@ -18,6 +18,7 @@ Plan for agents. Keep the recommended approach and concrete paths per module, ma
 
 - Decision:
 - Evidence: existing code paths reused or extended; public practice links
+- Technical check IDs and readiness: essential blockers versus later-stage checks
 - Files to create or modify:
 - Interfaces shared with other modules:
 - Joint decision references and applicable state/failure requirements:
@@ -38,11 +39,12 @@ One row per new component, store, or abstraction. A new business method or adapt
 
 Copied into the decision list of `design-review.md`.
 
-| # | Question | Options | Recommendation |
+| # | Approval item | Recommendation and evidence | Impact / cost; useful alternative only if needed |
 | --- | --- | --- | --- |
 
 ## Gate 1 Approval
 
+- Readiness and blocking check IDs:
 - Approved decisions:
 - User approval:
 - Approval timestamp:

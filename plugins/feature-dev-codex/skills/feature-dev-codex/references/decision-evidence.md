@@ -30,7 +30,7 @@ Start with the simplest plausible candidate that fits current constraints. Map i
 
 - **Sufficient**: adopt it and state the supporting evidence. Small adapters or new business methods may be necessary without rejecting the underlying simple mechanism.
 - **Insufficient**: name the unmet requirement, a concrete failure scenario, and evidence. Explain how the added complexity resolves that gap and what it costs.
-- **Unknown**: identify the missing evidence or decision and a way to resolve it. Keep the recommendation provisional; absence of verification does not itself prove a candidate inadequate.
+- **Unknown**: route the missing fact or decision using [clarification.md](clarification.md). Execute available technical checks and track external evidence requests with completion conditions. Keep the recommendation provisional; absence of verification does not itself prove a candidate inadequate.
 
 Compare candidates under the same requirements and failure assumptions. A defect in a wrapper calls for evaluating repair or a safe adapter, not automatically rejecting the underlying technology. No storage engine or library is the universal default.
 
@@ -45,5 +45,7 @@ The orchestrator checks the reasoning, not just whether fields are filled:
 | Do sources support the actual selection claim? A safety rule, an API capability, and an implementation example prove different things. | Narrow the claim or research the unanswered question. Links alone are not evidence of suitability or prevalence. |
 | Does a repairable local defect exclude an entire mechanism without comparing repair cost? | Evaluate the repair/adapter option under the same criteria. |
 | Do the candidates actually vary the choice being decided? | Include the relevant simple candidate; avoid two variants that silently fix the disputed choice. |
+| Does each optional alternative address the same decision with a real trade-off under the same constraints? | Split independent decisions; move rejected candidates out of selectable options. A single supported recommendation is enough. |
+| Are facts essential to the approach verified, with actionable checks for remaining gaps? | Execute available checks or request specific evidence. Keep a discussion draft while essential checks are unresolved; schedule non-blocking checks for the relevant later step. |
 
 Record the outcome and unresolved gaps in `findings.md`. Unsupported recommendations return to Step 2; a genuine business trade-off goes to the user. This is an agent quality check, not an additional approval gate.
