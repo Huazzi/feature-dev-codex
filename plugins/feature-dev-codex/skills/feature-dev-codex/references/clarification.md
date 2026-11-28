@@ -12,6 +12,8 @@ Use throughout planning to separate user decisions from technical checks, and to
 
 Use available code, supplied materials, public documentation, and authorized checks before requesting information. If external evidence is needed, ask for the specific contract, sample, or access needed and explain which choice it affects; continue independent work. An unanswered technical question does not become a user preference after Step 1.
 
+When missing supplier evidence blocks a candidate, check which parts of the guarantee the application could own using available interfaces and repository capabilities. Where both boundaries are plausible, compare them under the same requirements and failure scenarios. Identify the smallest check that could change the choice and the affected modules. Keep viable but unverified choices provisional, and draft application-owned contracts and acceptance scenarios that do not depend on the missing fact.
+
 For each technical check, record in `task_plan.md`: missing evidence, next action and who can perform it or supply the input, completion condition and when it is needed, affected modules/choices and what changes if the assumption fails, and status with a result link. Execute available checks rather than only listing them. Keep evidence and results in `findings.md`; summarize only decision-relevant blockers in `design-review.md`, referencing the task instead of duplicating it.
 
 Close a check on evidence, including evidence that rules out the approach; in that case reopen the affected choices and dependents. Approval of a direction does not close a technical check. Essential unresolved checks block implementation readiness; later-stage checks retain their due step without requiring all production integration tests before Gate 1.

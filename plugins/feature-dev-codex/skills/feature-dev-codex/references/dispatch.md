@@ -23,6 +23,8 @@ Medium work uses the first two lenses; the third joins for high-risk work or whe
 
 Prompt: the feature request, the lens, the instruction to use the `feature-dev-code-explorer` role, and a concise structured report with file references.
 
+For each key user action in the assigned scope, ask explorers to trace a current caller of the same or closest behavior from its entry point to the relevant request, response, and failure handling. If no caller exists, record where they looked and the capability still missing. For a proposed shared change, identify an existing caller and the behavior it relies on. Record the verified call paths and compatibility expectations in `findings.md`.
+
 ## Step 2: Module Lenses
 
 **Explorer**: the scope, earlier conclusions with their sources and proposed/approved status, and the question "what in this repository already does this, and how is it called, configured, and error-handled?" Include applicable primitives for the actual state, atomicity, or throttling needs, each with an existing caller. A candidate technology is not itself a requirement.
